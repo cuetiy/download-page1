@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>下載前請等待...</title>
+  <style>
+    body {
+      background-color: #fefefe;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    #timer {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+    .ad-box {
+      width: 300px;
+      height: 250px;
+      margin: 20px auto;
+      background-color: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      border: 2px dashed #bbb;
+    }
+  </style>
+  <script>
+    let seconds = 5;
+    function countdown() {
+      const timerEl = document.getElementById('timer');
+      if (seconds > 0) {
+        timerEl.innerText = seconds + " 秒後跳轉下載頁面...";
+        seconds--;
+        setTimeout(countdown, 1000);
+      } else {
+        window.location.href = "https://你的下載連結.com";
+      }
+    }
+    window.onload = countdown;
+  </script>
+</head>
+<body>
+  <h1>即將跳轉至下載頁面</h1>
+  <div id="timer"></div>
+
+  <div class="ad-box">
+    🔥 廣告區（你可以放 Google AdSense 或 PropellerAds）
+  </div>
+
+  <div class="ad-box">
+    📢 第二個廣告位（可放其他平台廣告或圖片）
+  </div>
+</body>
+</html>
